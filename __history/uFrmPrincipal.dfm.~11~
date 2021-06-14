@@ -12,6 +12,7 @@ object Form1: TForm1
   Font.Name = 'Small Fonts'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 48
   object PEscolha: TPanel
@@ -21,12 +22,8 @@ object Form1: TForm1
     Height = 395
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 144
-    ExplicitTop = 216
-    ExplicitWidth = 185
-    ExplicitHeight = 41
     object Label1: TLabel
-      Left = 145
+      Left = 121
       Top = 54
       Width = 156
       Height = 48
@@ -39,7 +36,7 @@ object Form1: TForm1
       ParentFont = False
     end
     object SpeedButton2: TSpeedButton
-      Left = 280
+      Left = 248
       Top = 232
       Width = 97
       Height = 78
@@ -53,11 +50,17 @@ object Form1: TForm1
       OnClick = ClickEscolha
     end
     object SpeedButton1: TSpeedButton
-      Left = 64
+      Left = 48
       Top = 232
       Width = 97
       Height = 78
       Caption = 'X'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -67
+      Font.Name = 'Small Fonts'
+      Font.Style = []
+      ParentFont = False
       OnClick = ClickEscolha
     end
   end
@@ -79,10 +82,8 @@ object Form1: TForm1
     ShowCaption = False
     TabOrder = 1
     Visible = False
-    ExplicitTop = 8
-    ExplicitWidth = 465
-    ExplicitHeight = 431
     object Pan_1_1: TPanel
+      Tag = 11
       Left = 5
       Top = 5
       Width = 125
@@ -96,23 +97,10 @@ object Form1: TForm1
       ParentBackground = False
       ParentFont = False
       TabOrder = 0
+      OnClick = PanelClick
     end
     object Pan_2_1: TPanel
-      Left = 135
-      Top = 5
-      Width = 125
-      Height = 125
-      Caption = 'X'
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -67
-      Font.Name = 'Small Fonts'
-      Font.Style = []
-      ParentBackground = False
-      ParentFont = False
-      TabOrder = 1
-    end
-    object Pan_1_2: TPanel
+      Tag = 21
       Left = 5
       Top = 135
       Width = 125
@@ -125,11 +113,30 @@ object Form1: TForm1
       Font.Style = []
       ParentBackground = False
       ParentFont = False
+      TabOrder = 1
+      OnClick = PanelClick
+    end
+    object Pan_1_2: TPanel
+      Tag = 12
+      Left = 135
+      Top = 5
+      Width = 125
+      Height = 125
+      Caption = 'X'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -67
+      Font.Name = 'Small Fonts'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
       TabOrder = 2
+      OnClick = PanelClick
     end
     object Pan_1_3: TPanel
-      Left = 5
-      Top = 265
+      Tag = 13
+      Left = 266
+      Top = 4
       Width = 125
       Height = 125
       Caption = 'X'
@@ -141,8 +148,10 @@ object Form1: TForm1
       ParentBackground = False
       ParentFont = False
       TabOrder = 3
+      OnClick = PanelClick
     end
     object Pan_2_2: TPanel
+      Tag = 22
       Left = 135
       Top = 135
       Width = 125
@@ -156,8 +165,10 @@ object Form1: TForm1
       ParentBackground = False
       ParentFont = False
       TabOrder = 4
+      OnClick = PanelClick
     end
     object Pan_3_3: TPanel
+      Tag = 33
       Left = 265
       Top = 265
       Width = 125
@@ -171,10 +182,12 @@ object Form1: TForm1
       ParentBackground = False
       ParentFont = False
       TabOrder = 5
+      OnClick = PanelClick
     end
     object Pan_3_1: TPanel
-      Left = 265
-      Top = 5
+      Tag = 31
+      Left = 5
+      Top = 265
       Width = 125
       Height = 125
       Caption = 'X'
@@ -186,23 +199,10 @@ object Form1: TForm1
       ParentBackground = False
       ParentFont = False
       TabOrder = 6
+      OnClick = PanelClick
     end
     object Pan_3_2: TPanel
-      Left = 265
-      Top = 135
-      Width = 125
-      Height = 125
-      Caption = 'X'
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -67
-      Font.Name = 'Small Fonts'
-      Font.Style = []
-      ParentBackground = False
-      ParentFont = False
-      TabOrder = 7
-    end
-    object Pan_2_3: TPanel
+      Tag = 32
       Left = 135
       Top = 265
       Width = 125
@@ -215,7 +215,30 @@ object Form1: TForm1
       Font.Style = []
       ParentBackground = False
       ParentFont = False
-      TabOrder = 8
+      TabOrder = 7
+      OnClick = PanelClick
     end
+    object Pan_2_3: TPanel
+      Tag = 23
+      Left = 265
+      Top = 135
+      Width = 125
+      Height = 125
+      Caption = 'X'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -67
+      Font.Name = 'Small Fonts'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 8
+      OnClick = PanelClick
+    end
+  end
+  object Timer: TTimer
+    OnTimer = TimerTimer
+    Left = 360
+    Top = 8
   end
 end

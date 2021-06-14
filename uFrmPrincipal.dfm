@@ -236,9 +236,4 @@ object Form1: TForm1
       OnClick = PanelClick
     end
   end
-  object Timer: TTimer
-    OnTimer = TimerTimer
-    Left = 360
-    Top = 8
-  end
 end

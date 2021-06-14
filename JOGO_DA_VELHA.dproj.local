@@ -2,8 +2,8 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2021/04/03 04:16:50.000.458,=C:\Users\PC\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2021/04/03 04:48:51.000.187,C:\Users\PC\Desktop\Programas\Jogo da véia\uFrmPrincipal.dfm=C:\Users\PC\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>2021/04/03 04:48:51.000.187,C:\Users\PC\Desktop\Programas\Jogo da véia\uFrmPrincipal.pas=C:\Users\PC\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2021/04/03 04:49:19.000.716,C:\Users\PC\Desktop\Programas\Jogo da véia\JOGO_DA_VELHA.dproj=C:\Users\PC\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2021/04/03 04:48:51.000.187,C:\Users\PC\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\PC\Desktop\Programas\Jogo da véia\uFrmPrincipal.dfm</Transaction>
+    <Transaction>2021/04/03 04:48:51.000.187,C:\Users\PC\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\PC\Desktop\Programas\Jogo da véia\uFrmPrincipal.pas</Transaction>
+    <Transaction>2021/04/03 04:49:19.000.716,C:\Users\PC\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\PC\Desktop\Programas\Jogo da véia\JOGO_DA_VELHA.dproj</Transaction>
   </Transactions>
 </BorlandProject>

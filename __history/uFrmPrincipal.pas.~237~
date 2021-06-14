@@ -201,15 +201,7 @@ begin
   CheckDraw;
 
   if CheckLines or CheckCollumns or CheckDiagonals then
-   if MessageDlg(winner + ' é o vencedor!!' + #13 + #13 + 'Recomeçar?',mtInformation,[mbYes, mbNo],0) = mrYes then
-   begin
-      ClearGame;
-      DesenhaTela;
-      PEscolha.Visible := True;
-      PGame.Visible := False;
-    end
-    else
-    Form1.Close;
+   MessageDlg(winner + ' ganhou por linha' + #13 + #13 + 'Recomeçar?',mtInformation,[mbYes, mbNo],0)
 end;
 
 function TForm1.CheckLines: boolean;

@@ -201,7 +201,7 @@ begin
   CheckDraw;
 
   if CheckLines or CheckCollumns or CheckDiagonals then
-   if MessageDlg(winner + ' é o vencedor!!' + #13 + #13 + 'Recomeçar?',mtInformation,[mbYes, mbNo],0) = mrYes then
+   if MessageDlg(winner + ' É O VENCEDOR!!' + #13 + #13 + 'Recomeçar?',mtInformation,[mbYes, mbNo],0) = mrYes then
    begin
       ClearGame;
       DesenhaTela;
