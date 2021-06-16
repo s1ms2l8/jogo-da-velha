@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Buttons, Vcl.StdCtrls, Vcl.ExtCtrls, math;
 
 type
-  TFrmPrincipal = class(TForm)
+  TForm1 = class(TForm)
     PEscolha: TPanel;
     Label1: TLabel;
     SpeedButton1: TSpeedButton;
@@ -46,7 +46,7 @@ type
   end;
 
 var
-  FrmPrincipal: TFrmPrincipal;
+  Form1: TForm1;
 
 implementation
 
@@ -56,12 +56,12 @@ var Sym,ESym,Winner : string;
 Turn : integer = 0;
 Game : array [1..3] of array [1..3] of string;
 
-procedure TFrmPrincipal.ClickEscolha(Sender: TObject);
+procedure TForm1.ClickEscolha(Sender: TObject);
 begin
   Escolha_Simbolo(TButton(Sender).Caption);
 end;
 
-procedure TFrmPrincipal.Escolha_Simbolo(LSym : string);
+procedure TForm1.Escolha_Simbolo(LSym : string);
 begin
   Sym := LSym;
 
@@ -76,7 +76,7 @@ begin
   PGame.Visible := True;
 end;
 
-procedure TFrmPrincipal.FormCreate(Sender: TObject);
+procedure TForm1.FormCreate(Sender: TObject);
 var
   I,Y: Integer;
 begin
@@ -89,7 +89,7 @@ begin
     end;
 end;
 
-procedure TFrmPrincipal.PanelClick(Sender: TObject);
+procedure TForm1.PanelClick(Sender: TObject);
 begin
   if Game[StrToInt(IntToStr(TPanel(Sender).Tag)[1]), StrToInt(IntToStr(TPanel(Sender).Tag)[2])] = '' then
     Game[StrToInt(IntToStr(TPanel(Sender).Tag)[1]), StrToInt(IntToStr(TPanel(Sender).Tag)[2])] := Sym
@@ -105,7 +105,7 @@ begin
   WinCheck;
 end;
 
-procedure TFrmPrincipal.ClearGame;
+procedure TForm1.ClearGame;
 var
   I,Y: Integer;
 begin
@@ -116,7 +116,7 @@ begin
     end;
 end;
 
-procedure TFrmPrincipal.DesenhaTela;
+procedure TForm1.DesenhaTela;
 var
   I,Y: Integer;
   LPanel : TPanel;
@@ -129,18 +129,18 @@ begin
     end;
 end;
 
-function TFrmPrincipal.seekPanel(x,y : integer): TPanel;
+function TForm1.seekPanel(x,y : integer): TPanel;
 var I : integer;
 begin
-  for i := 0 to FrmPrincipal.ComponentCount - 1 do
-  if (FrmPrincipal.Components[i] is TPanel) and (StrToInt(Concat(IntToStr(x), IntToStr(y))) = TPanel(FrmPrincipal.Components[i]).Tag) then
+  for i := 0 to Form1.ComponentCount - 1 do
+  if (Form1.Components[i] is TPanel) and (StrToInt(Concat(IntToStr(x), IntToStr(y))) = TPanel(Form1.Components[i]).Tag) then
     begin
-      Result := FrmPrincipal.Components[i] as TPanel;
+      Result := Form1.Components[i] as TPanel;
       exit;
     end;
 end;
 
-procedure TFrmPrincipal.BotRound;
+procedure TForm1.BotRound;
 var LSuccess : Boolean;
     I,Y,LTrys : integer;
 begin
@@ -168,7 +168,7 @@ begin
   end;
 end;
 
-Procedure TFrmPrincipal.LogicSuccess(X,Y : integer);
+Procedure TForm1.LogicSuccess(X,Y : integer);
 begin
   Game[x,y] := ESym;
   Turn := 0;
@@ -176,7 +176,7 @@ begin
   WinCheck;
 end;
 
-function TFrmPrincipal.BotTravado : boolean;
+function TForm1.BotTravado : boolean;
 var
   I,Y: Integer;
 begin
@@ -188,7 +188,7 @@ begin
       end;
 end;
 
-function TFrmPrincipal.JogoCheio : boolean;
+function TForm1.JogoCheio : boolean;
 var
   LFullGame: boolean;
   I,Y : integer;
@@ -203,7 +203,7 @@ begin
  Result := LFullGame;
 end;
 
-Procedure TFrmPrincipal.Wincheck;
+Procedure TForm1.Wincheck;
 begin
   CheckDraw;
 
@@ -216,10 +216,10 @@ begin
       PGame.Visible := False;
     end
     else
-    FrmPrincipal.Close;
+    Form1.Close;
 end;
 
-function TFrmPrincipal.CheckLines: boolean;
+function TForm1.CheckLines: boolean;
 var
  I,Y : integer;
  LLine : array [1..3] of string;
@@ -238,7 +238,7 @@ begin
   end;
 end;
 
-function TFrmPrincipal.CheckCollumns: boolean;
+function TForm1.CheckCollumns: boolean;
 var
  I,Y : integer;
  LColumn : array [1..3] of string;
@@ -257,7 +257,7 @@ begin
   end;
 end;
 
-function TFrmPrincipal.CheckDiagonals: boolean;
+function TForm1.CheckDiagonals: boolean;
 var
   I, Y: Integer;
   LDiagonal, LRevDiagonal : array[1..3] of string;
@@ -278,7 +278,7 @@ begin
   Result := True;
 end;
 
-Function TFrmPrincipal.CheckDraw: boolean;
+Function TForm1.CheckDraw: boolean;
 begin
   if JogoCheio then
     if MessageDlg('VELHA! Sem ganhadores Nesta Rodada' + #13 + #13 + 'Recomeçar?',mtInformation,[mbYes, mbNo],0) = mrYes then
@@ -289,10 +289,10 @@ begin
       PGame.Visible := False;
     end
     else
-    FrmPrincipal.Close;
+    Form1.Close;
 end;
 
-Function TFrmPrincipal.EndGame(PSequence : array of string): boolean;
+Function TForm1.EndGame(PSequence : array of string): boolean;
 var
   LSym : string;
   I: Integer;
